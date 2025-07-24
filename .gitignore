@@ -1,6 +1,6 @@
 # Byte-compiled / optimized / DLL files
 __pycache__/
-*.py[codz]
+*.py[cod]
 *$py.class
 
 # C extensions
@@ -101,7 +101,7 @@ ipython_config.py
 #uv.lock
 
 # poetry
-#   Similar to Pipfile.lock, it is generally recommended to include poetry.lock in version control.
+#   Similar to Pipenv.lock, it is generally recommended to include poetry.lock in version control.
 #   This is especially recommended for binary packages to ensure reproducibility, and is more
 #   commonly ignored for libraries.
 #   https://python-poetry.org/docs/basic-usage/#commit-your-poetrylock-file-to-version-control
@@ -173,20 +173,10 @@ cython_debug/
 #  be found at https://github.com/github/gitignore/blob/main/Global/JetBrains.gitignore
 #  and can be added to the global gitignore or merged into this file.  For a more nuclear
 #  option (not recommended) you can uncomment the following to ignore the entire idea folder.
-#.idea/
-
-# Abstra
-# Abstra is an AI-powered process automation framework.
-# Ignore directories containing user credentials, local state, and settings.
-# Learn more at https://abstra.io/docs
-.abstra/
+.idea/
 
 # Visual Studio Code
-#  Visual Studio Code specific template is maintained in a separate VisualStudioCode.gitignore 
-#  that can be found at https://github.com/github/gitignore/blob/main/Global/VisualStudioCode.gitignore
-#  and can be added to the global gitignore or merged into this file. However, if you prefer, 
-#  you could uncomment the following to ignore the entire vscode folder
-# .vscode/
+.vscode/
 
 # Ruff stuff:
 .ruff_cache/
@@ -195,13 +185,72 @@ cython_debug/
 .pypirc
 
 # Cursor
-#  Cursor is an AI-powered code editor. `.cursorignore` specifies files/directories to
-#  exclude from AI features like autocomplete and code analysis. Recommended for sensitive data
-#  refer to https://docs.cursor.com/context/ignore-files
 .cursorignore
 .cursorindexingignore
 
-# Marimo
-marimo/_static/
-marimo/_lsp/
-__marimo__/
+# =============================================================================
+# PROJECT SPECIFIC - Journal Manuscript Tracker
+# =============================================================================
+
+# Configuration files with sensitive information
+config.py              # Contains real usernames/passwords - NEVER commit!
+config_local.py        # Local configuration overrides
+.config                # Hidden config directory
+
+# User data and outputs
+data/                  # Personal manuscript data directory
+output/                # Generated reports and files
+exports/               # Exported data files
+manuscripts/           # Downloaded manuscript files
+cache/                 # Cached data
+
+# Generated files
+*.xlsx                 # Excel export files
+*.csv                  # CSV export files  
+*.json                # JSON data files (may contain personal info)
+*.pickle              # Pickle files
+*.pkl                 # Pickle files (alternative extension)
+
+# Session and temporary files
+session_*.txt         # Session cookies/tokens
+temp_*.txt           # Temporary files
+*.tmp                # Generic temporary files
+cookies.txt          # Browser cookies
+tokens.json          # Authentication tokens
+
+# Logs (additional to standard Python logs)
+tracking.log         # Application specific logs
+error.log           # Error logs
+debug.log           # Debug logs
+requests.log        # HTTP request logs
+
+# Browser automation
+selenium_logs/      # Selenium WebDriver logs
+screenshots/        # Debug screenshots
+browser_cache/      # Browser cache files
+
+# Operating System
+.DS_Store          # macOS
+.DS_Store?         # macOS
+._*                # macOS
+.Spotlight-V100    # macOS
+.Trashes           # macOS
+ehthumbs.db        # Windows
+Thumbs.db          # Windows
+desktop.ini        # Windows
+
+# Backup files
+*.bak              # Generic backup files
+*.backup           # Backup files
+*.old              # Old versions
+*~                 # Temporary backup files (vim, emacs)
+
+# Archive files (if created for personal use)
+*.zip              # Personal data archives
+*.tar.gz           # Personal data archives  
+*.rar              # Personal data archives
+
+# Personal notes and documentation
+NOTES.md           # Personal development notes  
+TODO.md            # Personal todo list
+CHANGELOG_PERSONAL.md  # Personal change tracking

@@ -127,29 +127,54 @@ data/
 </table>
 
 ## 🌍 支持的期刊
-
-### 🏥 医学期刊（已测试）
-
+ 
+### 📚 **通用支持说明**
+ 
+> 💡 **本工具支持所有使用 Editorial Manager 系统的期刊** - 只需要找到期刊的EM简称即可使用
+ 
 <div align="center">
-
-| 期刊类别 | 期刊名称 | 简称 | 状态 |
-|----------|----------|------|------|
-| **消化内科** | Gastroenterology | `GASTRO` | ✅ 完全支持 |
-| **消化内科** | Gut | `GUT` | ✅ 完全支持 |
-| **消化内科** | American Journal of Gastroenterology | `AJG` | ✅ 完全支持 |
-| **消化内科** | Inflammatory Bowel Diseases | `IBD` | ✅ 完全支持 |
-| **综合医学** | The Lancet | `LANCET` | ✅ 完全支持 |
-| **综合医学** | The Lancet Gastroenterology & Hepatology | `LANGAS` | ✅ 完全支持 |
-
+ 
+**✅ 理论上支持 1000+ 期刊，覆盖各个学科领域**
+ 
 </div>
+ 
+### 🏥 经过测试的期刊示例
+ 
+<div align="center">
+ 
+| 学科领域 | 期刊名称 | 简称 | 测试状态 |
+|:--------:|:--------|:----:|:--------:|
+| **消化内科** | Gastroenterology | `GASTRO` | ✅ 已验证 |
+| **消化内科** | Gut | `GUT` | ✅ 已验证 |
+| **消化内科** | American Journal of Gastroenterology | `AJG` | ✅ 已验证 |
+| **消化内科** | Inflammatory Bowel Diseases | `IBD` | ✅ 已验证 |
+| **综合医学** | The Lancet | `LANCET` | ✅ 已验证 |
+| **综合医学** | The Lancet Gastroenterology & Hepatology | `LANGAS` | ✅ 已验证 |
+| **眼科学** | Eye and Vision | `EYE` | ✅ 已验证 |
+| **神经科学** | Nature Neuroscience | `NN` | 🔶 理论支持 |
+| **心血管** | Circulation | `CIRC` | 🔶 理论支持 |
+| **肿瘤学** | Journal of Clinical Oncology | `JCO` | 🔶 理论支持 |
+ 
+</div>
+ 
+### 🔍 如何确认期刊支持？
+ 
+<div align="center">
+ 
+**3步验证法**
+ 
+</div>
+ 
+1. **📝 访问期刊投稿页面** - 查看是否使用Editorial Manager系统
+2. **🔗 检查URL格式** - `editorialmanager.com/[期刊简称]/` 
+3. **🧪 使用临时账户测试** - 选择"手动输入临时账户"进行验证
+ 
+**常见期刊简称查找示例：**
+https://www.editorialmanager.com/gastro/     → GASTRO
+https://www.editorialmanager.com/ibd/        → IBD
 
-> 💡 **支持所有使用 Editorial Manager 系统的期刊** - 只需要找到期刊的EM简称即可
-
-### 🔍 如何找到期刊简称？
-
-查看期刊的EM登录页面URL：
-- `https://www.editorialmanager.com/gastro/` → 简称: `GASTRO`
-- `https://www.editorialmanager.com/ibd/` → 简称: `IBD`
+https://www.editorialmanager.com/eye/        → EYE
+https://www.editorialmanager.com/circulation/ → CIRCULATION
 
 ## 📦 安装指南
 
@@ -330,6 +355,7 @@ pip uninstall colorama
 
 ## ❓ 常见问题
 
+> 💡 **提示**: 点击下方问题标题可以展开详细答案
 <details>
 <summary><strong>🔐 登录相关问题</strong></summary>
 
@@ -449,40 +475,106 @@ in the Software without restriction...
 
 ## 🙏 致谢
 
-### 💝 特别感谢
+### 🌟 特别鸣谢
 
-- 🔬 **所有使用本工具的研究者们** - 您的反馈让工具变得更好
-- 🏥 **医学研究社区** - 为学术进步做出的无私贡献
-- 💻 **开源社区** - 提供的优秀工具和库支持
+<div align="center">
 
-### 🛠️ 技术致谢
+**感谢以下项目和个人为本工具的发展提供灵感和支持**
 
-本项目使用了以下优秀的开源项目：
+</div>
 
-- [requests](https://requests.readthedocs.io/) - HTTP 库
-- [pandas](https://pandas.pydata.org/) - 数据处理
-- [beautifulsoup4](https://www.crummy.com/software/BeautifulSoup/) - HTML 解析
-- [colorama](https://pypi.org/project/colorama/) - 跨平台彩色终端
-- [xlsxwriter](https://xlsxwriter.readthedocs.io/) - Excel 文件写入
+#### 🔬 **开源项目致谢**
 
-### 🌟 贡献者
+<table align="center">
+<tr>
+<td align="center" width="50%">
 
-感谢所有为本项目做出贡献的开发者：
+**🎯 [pyeditorialmanager](https://github.com/glichtner/pyeditorialmanager)**
 
-<!-- 这里会自动生成贡献者列表 -->
+*Python interface for querying the editorialmanager journal submission system*
+
+由 [@glichtner](https://github.com/glichtner) 开发
+
+**贡献**: 为EM系统的Python接口开发提供了重要参考和灵感
+
+</td>
+<td align="center" width="50%">
+
+**📊 [Meta_script](https://github.com/slee0709/Meta_script)**
+
+*Editorial Manager Submission Tracker*
+
+由 [@slee0709](https://github.com/slee0709) 开发  
+
+**贡献**: 早期EM追踪工具的探索为本项目提供了宝贵思路
+
+</td>
+</tr>
+</table>
+
+#### 👥 **社区贡献者**
+
+<div align="center">
+
+<!-- 贡献者头像墙 -->
 <a href="https://github.com/taozhe6/em-tracker/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=taozhe6/em-tracker" />
 </a>
 
----
+**每一个Star、Fork、Issue和PR都是对项目的宝贵支持！**
+
+</div>
+
+#### 🏥 **研究社区**
+
+- 🔬 **全球研究者社区** - 您的使用反馈让工具不断改进
+- 🏥 **医学研究机构** - 为学术进步提供的宝贵建议  
+- 📚 **期刊编辑部** - 对自动化工具的理解和支持
+- 👨‍💻 **开发者社区** - 在Issues中提供的技术支持和建议
+
+#### 🛠️ **技术框架致谢**
 
 <div align="center">
 
-### 🌟 如果这个项目对您有帮助，请给我们一个 Star！
+| 项目 | 版本 | 用途 | 感谢理由 |
+|:----:|:----:|:----:|:--------|
+| **[requests](https://requests.readthedocs.io/)** | 2.25+ | HTTP请求处理 | 优雅简洁的API设计 |
+| **[pandas](https://pandas.pydata.org/)** | 1.3+ | 数据处理分析 | 强大的数据操作能力 |
+| **[beautifulsoup4](https://www.crummy.com/software/BeautifulSoup/)** | 4.9+ | HTML解析 | 直观的网页内容提取 |
+| **[colorama](https://pypi.org/project/colorama/)** | 0.4+ | 跨平台彩色终端 | 提升用户界面体验 |
+| **[xlsxwriter](https://xlsxwriter.readthedocs.io/)** | 3.0+ | Excel文件生成 | 专业的表格格式化 |
 
-[![Star History Chart](https://api.star-history.com/svg?repos=taozhe6/em-tracker&type=Date)](https://star-history.com/#taozhe6/em-tracker&Date)
+</div>
 
-**Made with ❤️ for the research community**
+### 💝 **特殊致谢**
+
+> **献给所有为学术研究默默奉献的研究者们**
+> 
+> *您的每一篇论文投稿，每一次状态查询，都是在推动人类知识的边界。*
+> *这个小工具能为您节省一点时间，让您专注于更重要的研究工作，就是我们最大的荣幸。*
+
+<div align="center">
+
+**🌟 如果这个工具对您的研究工作有帮助，请给我们一个 Star！**
+
+*您的支持是我们持续改进的动力* ⭐
+
+</div>
+
+---
+
+### 📬 **联系我们**
+
+- 🐛 **Bug报告**: [提交Issue](https://github.com/taozhe6/em-tracker/issues/new?template=bug_report.md)
+- 💡 **功能建议**: [功能请求](https://github.com/taozhe6/em-tracker/issues/new?template=feature_request.md)  
+- 🤝 **参与开发**: [查看贡献指南](CONTRIBUTING.md)
+- 📧 **直接联系**: 通过GitHub私信联系维护者
+
+<div align="center">
+
+**Made with ❤️ for the global research community**
+
+*让学术投稿追踪变得简单而高效*
 
 [⬆ 回到顶部](#-editorial-manager-tracker)
 

@@ -6,7 +6,7 @@
 
 [![Python](https://img.shields.io/badge/Python-3.7+-blue.svg)](https://python.org)
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/taozhe6/em-tracker/pulls)
 [![Made for Researchers](https://img.shields.io/badge/Made%20for-Researchers-orange.svg)](https://github.com/taozhe6/em-tracker)
 
 [快速开始](#-快速开始) •
@@ -127,21 +127,21 @@ data/
 </table>
 
 ## 🌍 支持的期刊
- 
+
 ### 📚 **通用支持说明**
- 
+
 > 💡 **本工具支持所有使用 Editorial Manager 系统的期刊** - 只需要找到期刊的EM简称即可使用
- 
+
 <div align="center">
- 
+
 **✅ 理论上支持 1000+ 期刊，覆盖各个学科领域**
- 
+
 </div>
- 
+
 ### 🏥 经过测试的期刊示例
- 
+
 <div align="center">
- 
+
 | 学科领域 | 期刊名称 | 简称 | 测试状态 |
 |:--------:|:--------|:----:|:--------:|
 | **消化内科** | Gastroenterology | `GASTRO` | ✅ 已验证 |
@@ -154,27 +154,28 @@ data/
 | **神经科学** | Nature Neuroscience | `NN` | 🔶 理论支持 |
 | **心血管** | Circulation | `CIRC` | 🔶 理论支持 |
 | **肿瘤学** | Journal of Clinical Oncology | `JCO` | 🔶 理论支持 |
- 
+
 </div>
- 
+
 ### 🔍 如何确认期刊支持？
- 
+
 <div align="center">
- 
+
 **3步验证法**
- 
+
 </div>
- 
+
 1. **📝 访问期刊投稿页面** - 查看是否使用Editorial Manager系统
 2. **🔗 检查URL格式** - `editorialmanager.com/[期刊简称]/` 
 3. **🧪 使用临时账户测试** - 选择"手动输入临时账户"进行验证
- 
-**常见期刊简称查找示例：**
-https://www.editorialmanager.com/gastro/     → GASTRO
-https://www.editorialmanager.com/ibd/        → IBD
 
+**常见期刊简称查找示例：**
+```
+https://www.editorialmanager.com/gastro/     → GASTRO
+https://www.editorialmanager.com/ibd/        → IBD  
 https://www.editorialmanager.com/eye/        → EYE
 https://www.editorialmanager.com/circulation/ → CIRCULATION
+```
 
 ## 📦 安装指南
 
@@ -215,7 +216,6 @@ cd em-tracker
 
 # 安装开发依赖
 pip install -r requirements.txt
-pip install -r requirements-dev.txt  # 如果有的话
 ```
 
 ## 📖 使用文档
@@ -356,69 +356,82 @@ pip uninstall colorama
 ## ❓ 常见问题
 
 > 💡 **提示**: 点击下方问题标题可以展开详细答案
+
 <details>
-<summary><strong>🔐 登录相关问题</strong></summary>
+<summary><strong>🔐 登录相关问题</strong> 👈 <em>点击展开</em></summary>
+
+<br>
 
 ### Q: 登录失败怎么办？
-**A**: 检查以下几点：
-1. ✅ 用户名密码是否正确
-2. ✅ 期刊简称是否正确（区分大小写）
-3. ✅ 网络连接是否稳定
-4. ✅ 期刊网站是否可以正常访问
+**A**: 请按以下顺序检查：
+1. ✅ **用户名密码** - 确认无拼写错误
+2. ✅ **期刊简称** - 区分大小写，如`GASTRO`不是`gastro`
+3. ✅ **网络连接** - 尝试手动访问期刊网站
+4. ✅ **期刊网站状态** - 检查期刊EM系统是否维护中
 
 ### Q: 如何找到正确的期刊简称？
-**A**: 
-1. 访问期刊的Editorial Manager页面
-2. 查看URL，如：`editorialmanager.com/gastro/` → 简称是 `GASTRO`
-3. 或者联系期刊编辑部询问
+**A**: **三种方法**：
+- **方法1**: 访问期刊官网，找到"Submit"链接，查看URL
+- **方法2**: 直接访问 `editorialmanager.com/[尝试的简称]/`
+- **方法3**: 联系期刊编辑部直接询问
 
 ### Q: 支持双因素认证(2FA)吗？
-**A**: 目前不支持。如果期刊启用了2FA，建议使用临时账户模式手动处理。
+**A**: ❌ **目前不支持**。如果期刊启用了2FA，建议使用"临时账户模式"手动处理。
 
 </details>
 
 <details>
-<summary><strong>📊 数据和文件问题</strong></summary>
+<summary><strong>📊 数据和文件问题</strong> 👈 <em>点击展开</em></summary>
+
+<br>
 
 ### Q: Excel文件被占用怎么办？
-**A**: 程序会自动检测并提示：
+**A**: 程序有**智能检测**功能：
 ```
-[操作暂停] 文件 'xxx.xlsx' 正被另一程序占用。
+[操作暂停] 文件 'Your-Paper_投稿追踪.xlsx' 正被另一程序占用。
 请关闭该Excel文件后，按 Enter键 继续...
+[重试] 正在尝试重新写入...
 ```
-关闭Excel文件后按Enter即可。
 
 ### Q: 如何备份我的追踪数据？
-**A**: 直接复制整个 `data/` 文件夹即可。
+**A**: **简单复制即可**：
+```bash
+# 备份整个数据文件夹
+cp -r data/ backup-data-$(date +%Y%m%d)/
+```
 
 ### Q: 可以修改Excel文件格式吗？
-**A**: 可以修改 `main.py` 中的Excel写入部分，或者提交Feature Request。
+**A**: 可以修改 `main.py` 中的Excel写入部分，或者提交Issue描述需求。
 
 </details>
 
 <details>
-<summary><strong>🛠️ 技术问题</strong></summary>
+<summary><strong>🛠️ 技术问题</strong> 👈 <em>点击展开</em></summary>
+
+<br>
 
 ### Q: 为什么推荐使用虚拟环境？
-**A**: 虚拟环境的好处：
+**A**: **虚拟环境的核心优势**：
 - 🔒 隔离项目依赖，避免版本冲突
-- 🧹 保持系统Python环境干净  
+- 🧹 保持系统Python环境干净整洁  
 - 📦 便于项目迁移和分享
 - 🛡️ 避免权限问题
 
 ### Q: 程序运行很慢怎么办？
-**A**: 
+**A**: **性能优化建议**：
 1. 检查网络连接速度
-2. 尝试修改 `config.py` 中的超时设置
+2. 修改 `config.py` 中的超时设置
 3. 如果稿件很多，属于正常现象
 
 ### Q: 支持代理服务器吗？
-**A**: 目前不支持，但您可以通过系统代理或修改requests配置实现。
+**A**: 目前不直接支持，但可以通过系统代理设置实现。
 
 </details>
 
 <details>
-<summary><strong>🆕 新功能请求</strong></summary>
+<summary><strong>🆕 新功能请求</strong> 👈 <em>点击展开</em></summary>
+
+<br>
 
 ### Q: 能否支持其他期刊系统？
 **A**: 目前专注于Editorial Manager系统。如有其他需求，请提交Issue讨论。
@@ -426,8 +439,8 @@ pip uninstall colorama
 ### Q: 能否添加邮件通知功能？
 **A**: 这是一个很好的想法！请在Issues中提交Feature Request。
 
-### Q: 能否支持API接口？
-**A**: 期刊网站通常不提供公开API，目前只能通过网页抓取实现。
+### Q: 有计划开发Web界面吗？
+**A**: 在考虑中，欢迎有Web开发经验的朋友加入！
 
 </details>
 
@@ -449,7 +462,6 @@ pip uninstall colorama
 - ✨ **新功能** - 添加实用的新功能
 - 📚 **文档改进** - 完善README和代码注释
 - 🎨 **代码优化** - 提升代码质量和性能
-- 🧪 **测试覆盖** - 添加单元测试和集成测试
 
 ### 🏷️ Issue 标签
 
@@ -462,16 +474,6 @@ pip uninstall colorama
 ## 📄 许可证
 
 本项目基于 [MIT License](LICENSE) 开源。
-
-```
-MIT License
-
-Copyright (c) 2024 em-tracker contributors
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction...
-```
 
 ## 🙏 致谢
 
@@ -516,7 +518,6 @@ in the Software without restriction...
 
 <div align="center">
 
-<!-- 贡献者头像墙 -->
 <a href="https://github.com/taozhe6/em-tracker/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=taozhe6/em-tracker" />
 </a>
@@ -551,7 +552,7 @@ in the Software without restriction...
 > **献给所有为学术研究默默奉献的研究者们**
 > 
 > *您的每一篇论文投稿，每一次状态查询，都是在推动人类知识的边界。*
-> *这个小工具能为您节省一点时间，让您专注于更重要的研究工作，就是我们最大的荣幸。*
+> *这个小工具如果能为您节省一点时间，让您专注于更重要的研究工作，就是我们最大的荣幸。*
 
 <div align="center">
 
@@ -565,10 +566,10 @@ in the Software without restriction...
 
 ### 📬 **联系我们**
 
-- 🐛 **Bug报告**: [提交Issue](https://github.com/taozhe6/em-tracker/issues/new?template=bug_report.md)
-- 💡 **功能建议**: [功能请求](https://github.com/taozhe6/em-tracker/issues/new?template=feature_request.md)  
-- 🤝 **参与开发**: [查看贡献指南](CONTRIBUTING.md)
-- 📧 **直接联系**: 通过GitHub私信联系维护者
+- 🐛 **Bug报告**: [提交Issue](https://github.com/taozhe6/em-tracker/issues/new)
+- 💡 **功能建议**: [提交Issue](https://github.com/taozhe6/em-tracker/issues/new)  
+- 🤝 **参与开发**: 查看上方贡献指南
+- 📧 **直接联系**: 通过GitHub Issue联系维护者
 
 <div align="center">
 

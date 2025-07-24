@@ -68,7 +68,9 @@ pip install -r requirements.txt && python add_config.py
 | 2024-01-20 09:15 | 2024-01-10 | 2024-01-19 | Decision Made | MS2024-001 |
 
 ### 📁 智能文件组织
-```
+ 
+<div align="center">
+📁 智能文件组织
 data/
 ├── researcher1@university.edu/
 │   ├── MS2024-001_Innovative-Treatment-Approach/
@@ -76,9 +78,10 @@ data/
 │   └── MS2024-002_Clinical-Trial-Results/
 │       └── Clinical-Trial-Results_投稿追踪.xlsx
 └── researcher2@hospital.org/
-    └── ...
-```
+└── ...
 
+<TEXT>
+ 
 </div>
 
 ## ✨ 核心功能
@@ -542,10 +545,12 @@ cp -r data/ backup-data-$(date +%Y%m%d)/
 | **[requests](https://requests.readthedocs.io/)** | 2.25+ | HTTP请求处理 | 优雅简洁的API设计 |
 | **[pandas](https://pandas.pydata.org/)** | 1.3+ | 数据处理分析 | 强大的数据操作能力 |
 | **[beautifulsoup4](https://www.crummy.com/software/BeautifulSoup/)** | 4.9+ | HTML解析 | 直观的网页内容提取 |
-| **[colorama](https://pypi.org/project/colorama/)** | 0.4+ | 跨平台彩色终端 | 提升用户界面体验 |
+| **[lxml](https://lxml.de/)** | 4.6+ | XML/HTML解析器 | 高性能的解析引擎 |
 | **[xlsxwriter](https://xlsxwriter.readthedocs.io/)** | 3.0+ | Excel文件生成 | 专业的表格格式化 |
+| **[colorama](https://pypi.org/project/colorama/)** | 0.4+ | 跨平台彩色终端 | 提升用户界面体验 |
 
 </div>
+
 
 ### 💝 **特殊致谢**
 
@@ -568,8 +573,9 @@ cp -r data/ backup-data-$(date +%Y%m%d)/
 
 - 🐛 **Bug报告**: [提交Issue](https://github.com/taozhe6/em-tracker/issues/new)
 - 💡 **功能建议**: [提交Issue](https://github.com/taozhe6/em-tracker/issues/new)  
-- 🤝 **参与开发**: 查看上方贡献指南
+- 🤝 **参与开发**: [查看贡献指南](#-贡献指南)
 - 📧 **直接联系**: 通过GitHub Issue联系维护者
+
 
 <div align="center">
 
